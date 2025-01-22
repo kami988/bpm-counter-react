@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { flex } from "../../styled-system/patterns";
+import { css } from "../../styled-system/css";
 
 function BPMCalculator() {
   const [, setTimestamps] = useState<number[]>([]);
@@ -15,6 +17,8 @@ function BPMCalculator() {
           .slice(1)
           .forEach((t, i) => (intervalSum += t - updatedTimestamps[i]));
         setBpm(((60 * 1000) / intervalSum) * (updatedTimestamps.length - 1)); // BPMを計算
+      } else {
+        setBpm(0);
       }
       return updatedTimestamps;
     });
@@ -26,22 +30,52 @@ function BPMCalculator() {
   };
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-gray-100">
-      <h1 className="mb-4 text-3xl font-bold">BPM Calculator</h1>
+    <div
+      className={flex({
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        fontSize: "2xl",
+        fontWeight: "bold",
+        background: "gray.200",
+        padding: "2rem",
+        gap: "2rem",
+        borderRadius: "md",
+      })}
+    >
+      <div className={flex({ gap: "0.5rem" })}>
+        <p>BPM: </p>
+        <span className={flex({ justifyContent: "center", width: "5rem" })}>
+          {bpm !== null ? bpm.toFixed(2) : "-"}
+        </span>
+      </div>
       <button
+        className={css({
+          padding: "1rem",
+          fontSize: "2xl",
+          fontWeight: "bold",
+          background: "blue.500",
+          color: "white",
+          borderRadius: "md",
+          cursor: "pointer",
+        })}
         onClick={handleClick}
-        className="rounded-lg bg-blue-500 px-6 py-2 text-white hover:bg-blue-600"
       >
         Tap
       </button>
-      <div className="mt-4">
-        <p className="text-xl">BPM: {bpm !== null ? bpm : "--"}</p>
-      </div>
       <button
+        className={css({
+          padding: "0.5rem",
+          fontSize: "1xl",
+          fontWeight: "bold",
+          background: "red.500",
+          color: "white",
+          borderRadius: "md",
+          cursor: "pointer",
+        })}
         onClick={handleReset}
-        className="mt-4 rounded-lg bg-red-500 px-6 py-2 text-white hover:bg-red-600"
       >
-        Reset
+        🔃
       </button>
     </div>
   );

@@ -1,11 +1,20 @@
-import "./App.css";
-import BPMCalculator from "./components/Counter";
+import { flex } from "../styled-system/patterns";
+import Counter from "./components/Counter";
 
 function App() {
   return (
-    <>
-      <BPMCalculator />
-    </>
+    <div
+      className={flex({
+        alignItems: "center",
+        justifyContent: "center",
+        fontSize: "2xl",
+        fontWeight: "bold",
+        width: "screen",
+        height: "screen",
+      })}
+    >
+      <Counter />
+    </div>
   );
 }
 
