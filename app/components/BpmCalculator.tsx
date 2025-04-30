@@ -85,8 +85,8 @@ const BpmCalculator = ({
 
   return (
     <div
-      className={`w-full max-w-lg mx-auto bg-white rounded-xl shadow-md overflow-hidden p-6 relative ${
-        isOnly ? "" : "focus:ring-blue-300 focus:ring-1"
+      className={`w-full max-w-lg mx-auto ring-offset-background border bg-background rounded-xl shadow-md overflow-hidden p-6 relative ${
+        isOnly ? "" : "focus:ring-blue-300 focus:ring-2"
       }`}
       ref={containerRef}
       onFocus={handleFocus}
@@ -120,7 +120,7 @@ const BpmCalculator = ({
 
           <button
             onClick={handleReset}
-            className="flex items-center px-4 py-2 text-sm rounded-lg text-gray-600 hover:text-gray-800 hover:bg-gray-100 transition-colors"
+            className="flex items-center px-4 py-2 text-sm rounded-lg text-secondary-foreground hover:bg-secondary transition-colors"
             aria-label="Reset"
           >
             <RefreshCcw className="h-4 w-4 mr-1" />
