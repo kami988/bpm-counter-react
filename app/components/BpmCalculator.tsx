@@ -4,7 +4,7 @@ import React, { useState, useEffect, useCallback, useRef } from "react";
 import TapButton from "./TapButton";
 import BpmDisplay from "./BpmDisplay";
 import NumberLine from "./NumberLine";
-import { calculateBPM, calculateInstantBPM } from "../lib/bpmUtils";
+import { calculateBPM, calculateInstantBPM } from "../libs/bpmUtils";
 import { RefreshCcw, X } from "lucide-react";
 
 interface BpmCalculatorProps {
@@ -67,12 +67,17 @@ const BpmCalculator = ({
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (
-        event.code === "Space" &&
-        (isOnly || containerRef.current?.contains(activeElement))
-      ) {
-        event.preventDefault();
-        handleTap();
+      if (isOnly || containerRef.current?.contains(activeElement)) {
+        switch (event.code) {
+          case "Space":
+            event.preventDefault();
+            handleTap();
+            break;
+          case "KeyR":
+            event.preventDefault();
+            handleReset();
+            break;
+        }
       }
     };
 
@@ -81,7 +86,7 @@ const BpmCalculator = ({
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [handleTap, isOnly, containerRef, activeElement]);
+  }, [handleTap, isOnly, containerRef, activeElement, handleReset]);
 
   return (
     <div
@@ -110,13 +115,7 @@ const BpmCalculator = ({
         </div>
 
         <div className="flex flex-col items-center space-y-4 w-full">
-          <TapButton
-            onTap={handleTap}
-            isActive={isActive}
-            isKeyboardActive={
-              isOnly || containerRef.current?.contains(activeElement) || false
-            }
-          />
+          <TapButton onTap={handleTap} isActive={isActive} />
 
           <button
             onClick={handleReset}

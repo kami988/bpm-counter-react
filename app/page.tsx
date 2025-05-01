@@ -5,6 +5,8 @@ import BpmCalculator from "./components/BpmCalculator";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import AddCalculatorButton from "./components/AddCalculatorButton";
+import Usage from "./components/Usage";
+import "./libs/i18n";
 
 function App() {
   const [calculators, setCalculators] = useState<number[]>([0]);
@@ -21,6 +23,7 @@ function App() {
     <div className="min-h-screen bg-background flex flex-col">
       <Header />
       <main className="flex-grow p-4 space-y-6">
+        <Usage />
         {calculators.map((id) => (
           <BpmCalculator
             key={id}

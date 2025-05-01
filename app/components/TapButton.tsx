@@ -3,10 +3,9 @@ import React from "react";
 interface TapButtonProps {
   onTap: () => void;
   isActive: boolean;
-  isKeyboardActive: boolean;
 }
 
-const TapButton = ({ onTap, isActive, isKeyboardActive }: TapButtonProps) => {
+const TapButton = ({ onTap, isActive }: TapButtonProps) => {
   return (
     <div className="w-full h-25">
       <button
@@ -23,9 +22,7 @@ const TapButton = ({ onTap, isActive, isKeyboardActive }: TapButtonProps) => {
         aria-label="Tap to calculate BPM"
       >
         <div className="flex flex-col items-center">
-          <span className="text-xl">
-            {isKeyboardActive ? "Tap or Space key" : "Tap"}
-          </span>
+          <span className="text-xl">Tap</span>
         </div>
       </button>
     </div>
