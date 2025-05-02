@@ -15,6 +15,7 @@
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.405 0 0);
+  --secondary-active: oklch(0.92 0 0);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.356 0 0);
   --accent: oklch(0.97 0 0);
@@ -66,6 +67,7 @@
   --color-muted: var(--muted);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-secondary: var(--secondary);
+  --color-secondary-active: var(--secondary-active);
   --color-primary-foreground: var(--primary-foreground);
   --color-primary: var(--primary);
   --color-popover-foreground: var(--popover-foreground);
@@ -97,6 +99,7 @@ button {
   --primary-foreground: oklch(0.205 0 0);
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.785 0 0);
+  --secondary-active: oklch(0.309 0 0);
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
   --accent: oklch(0.269 0 0);

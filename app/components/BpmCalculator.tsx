@@ -122,7 +122,7 @@ const BpmCalculator = ({
 
           <button
             onClick={handleReset}
-            className="flex items-center px-4 py-2 text-sm rounded-lg text-secondary-foreground hover:bg-secondary transition-colors"
+            className="flex items-center px-4 py-2 text-sm rounded-lg text-secondary-foreground hover:bg-secondary active:bg-secondary-active transition-colors"
             aria-label="Reset"
           >
             <RefreshCcw className="h-4 w-4 mr-1" />
