@@ -1,5 +1,4 @@
 {
-  "lang": "English",
   "ja": "日本語",
   "en": "English",
   "title": "BPM Calculator",
@@ -8,6 +7,6 @@
   "usage1": "Press the Tap button or space key to measure BPM",
   "usage2": "Press the Reset button or R key to reset BPM",
   "usage3": "The dots on the number line represent the BPM calculated from the last two taps. Use it to notice tempo changes.",
-  "usage4": "To add multiple calculators, press the + button below",
-  "usage5": "To remove one of the multiple calculators, press the × button in the upper right corner"
+  "usage4": "Use the + and × buttons to add or remove counters.",
+  "usage5": "You can change the language and theme from the icon at the top right."
 }
