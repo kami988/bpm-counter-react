@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Header = () => {
   return (
-    <header className="fixed top-0 left-0 w-full shadow-sm border-b bg-background z-50">
+    <header className="sticky top-0 left-0 w-full shadow-sm border-b bg-background z-50">
       <meta
         name="google-adsense-account"
         content="ca-pub-7976880670660861"
