@@ -13,6 +13,9 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// https://www.npmjs.com/package/@cloudflare/next-on-pages
+export const runtime = "edge";
+
 export const metadata: Metadata = {
   title: "BPM測定器 | 数直線でタイミングのズレがすぐにわかる",
   description:
