@@ -1,3 +1,14 @@
+// タップ間隔を記録する配列
+export const calculateInterval = (
+  oldTappedAt: number,
+  tappedAt: number,
+): number => {
+  // タップ間隔を計算
+  const interval = tappedAt - oldTappedAt;
+  // タップ間隔を返す
+  return interval;
+};
+
 // 全タップ間隔からBPMを計算
 export const calculateBPM = (intervals: number[]): number => {
   if (intervals.length < 1) {

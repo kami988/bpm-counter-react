@@ -9,10 +9,16 @@ import {
 } from "./ui/accordion";
 
 // Methodコンポーネントを作成
-const Method = ({ children }: { children: React.ReactNode }) => {
+const Method = ({
+  children,
+  index,
+}: {
+  children: React.ReactNode;
+  index: number;
+}) => {
   return (
     <li className="flex items-start space-x-2">
-      <span className="min-w-2 h-2 mt-1 rounded-full bg-muted-foreground"></span>
+      <span className="text-sm font-bold text-muted-foreground">{index}.</span>
       <p className="text-sm text-muted-foreground whitespace-pre-wrap">
         {children}
       </p>
@@ -31,13 +37,13 @@ const Usage = () => {
       <AccordionItem value="item-1">
         <AccordionTrigger>{t("usage")}</AccordionTrigger>
         <AccordionContent>
-          <ul className="space-y-2">
-            <Method>{t("usage1")}</Method>
-            <Method>{t("usage2")}</Method>
-            <Method>{t("usage3")}</Method>
-            <Method>{t("usage4")}</Method>
-            <Method>{t("usage5")}</Method>
-          </ul>
+          <ol className="space-y-2">
+            <Method index={1}>{t("usage1")}</Method>
+            <Method index={2}>{t("usage2")}</Method>
+            <Method index={3}>{t("usage3")}</Method>
+            <Method index={4}>{t("usage4")}</Method>
+            <Method index={5}>{t("usage5")}</Method>
+          </ol>
         </AccordionContent>
       </AccordionItem>
     </Accordion>

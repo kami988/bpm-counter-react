@@ -4,7 +4,11 @@ import React, { useState, useEffect, useCallback, useRef } from "react";
 import TapButton from "./TapButton";
 import BpmDisplay from "./BpmDisplay";
 import NumberLine from "./NumberLine";
-import { calculateBPM, calculateInstantBPM } from "../libs/bpmUtils";
+import {
+  calculateBPM,
+  calculateInstantBPM,
+  calculateInterval,
+} from "../libs/bpmUtils";
 import { RefreshCcw, X } from "lucide-react";
 
 interface BpmCalculatorProps {
@@ -39,8 +43,7 @@ const BpmCalculator = ({
   const handleTap = useCallback(() => {
     const now = performance.now();
     if (tappedAt !== null) {
-      const interval = now - tappedAt;
-      setTapIntervals((prev) => [...prev, interval]);
+      setTapIntervals((prev) => [...prev, calculateInterval(tappedAt, now)]);
     } else {
       setBpm(0);
     }

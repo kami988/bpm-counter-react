@@ -11,8 +11,8 @@ const resources = {
 };
 
 i18n.use(initReactI18next).init({
-  lng: "en", // 使用する言語
-  fallbackLng: "en", // 言語での翻訳が利用できない場合に使用する言語。
+  lng: "ja", // 使用する言語
+  fallbackLng: "ja", // 言語での翻訳が利用できない場合に使用する言語。
   resources, // 使用する言語ファイル
   interpolation: {
     // react already safes from xss
