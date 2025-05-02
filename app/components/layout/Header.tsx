@@ -5,6 +5,10 @@ import Image from "next/image";
 const Header = () => {
   return (
     <header className="shadow-sm border-b">
+      <meta
+        name="google-adsense-account"
+        content="ca-pub-7976880670660861"
+      ></meta>
       <div className="max-w-7xl gap-4 mx-auto px-4 py-4 sm:px-6 flex items-center">
         <Image
           aria-hidden
