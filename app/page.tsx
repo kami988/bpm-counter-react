@@ -20,7 +20,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-background flex flex-col">
+    <div className="min-h-dvh bg-background flex flex-col">
       <Header />
       <main className="flex-grow p-4 space-y-6">
         <Usage />
