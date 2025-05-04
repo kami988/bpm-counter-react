@@ -5,6 +5,11 @@ import Image from "next/image";
 const Header = () => {
   return (
     <header className="sticky top-0 left-0 w-full shadow-sm border-b bg-background z-50">
+      <script
+        defer
+        src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon={`{"token": ${process.env.ANALYTICS_TOKEN}}`}
+      ></script>
       <meta
         name="google-adsense-account"
         content="ca-pub-7976880670660861"
