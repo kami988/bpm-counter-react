@@ -8,12 +8,14 @@ const Header = () => {
       <script
         defer
         src="https://static.cloudflareinsights.com/beacon.min.js"
-        data-cf-beacon={`{"token": ${process.env.ANALYTICS_TOKEN}}`}
+        data-cf-beacon={`{"token": "${process.env.ANALYTICS_TOKEN}"}`}
+        crossOrigin="anonymous"
       ></script>
-      <meta
-        name="google-adsense-account"
-        content="ca-pub-7976880670660861"
-      ></meta>
+      <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7976880670660861"
+        crossOrigin="anonymous"
+      ></script>
       <div className="max-w-7xl gap-4 mx-auto px-4 py-4 sm:px-6 flex items-center">
         <Image
           aria-hidden
