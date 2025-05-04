@@ -33,6 +33,8 @@ jobs:
       - name: Build project
         # https://www.npmjs.com/package/@cloudflare/next-on-pages
         run: npx @cloudflare/next-on-pages
+        env:
+          ANALYTICS_ID: ${{ secrets.ANALYTICS_ID }}
       - name: Deploy
         uses: cloudflare/wrangler-action@v3
         with:
