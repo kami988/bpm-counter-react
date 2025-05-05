@@ -17,9 +17,9 @@ const geistMono = Geist_Mono({
 export const runtime = "edge";
 
 export const metadata: Metadata = {
-  title: "BPM測定器 | 数直線でタイミングのズレがすぐにわかる",
+  title: "BPM Calculator - タップでかんたんに測定できるBPM（テンポ）カウンター",
   description:
-    "タップかキーボードで簡単にBPM（テンポ）を測定できます。数直線で直感的に測定のズレがすぐにわかります。",
+    "数直線で直感的にタップのタイミングを確認できるBPM（テンポ）カウンターです。音楽のテンポを測定したり、リズムを確認したりするのに役立ちます。",
 };
 
 export default function RootLayout({
