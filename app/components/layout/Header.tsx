@@ -7,7 +7,7 @@ import Image from "next/image";
 const Header = () => {
   return (
     <header className="sticky top-0 left-0 w-full shadow-sm border-b bg-background z-50">
-      {process.env.ANALYTICS_TOKEN && (
+      {process.env.NEXT_PUBLIC_ANALYTICS_TOKEN && (
         <>
           <script
             defer
