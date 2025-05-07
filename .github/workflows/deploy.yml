@@ -41,3 +41,7 @@ jobs:
           command: pages deploy ./.vercel/output/static --project-name=bpm-calculator --branch=main
           # Optional: Enable this if you want to have GitHub Deployments triggered
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          secrets: |
+            NEXT_PUBLIC_ANALYTICS_TOKEN
+        env:
+          NEXT_PUBLIC_ANALYTICS_TOKEN: ${{ secrets.NEXT_PUBLIC_ANALYTICS_TOKEN }}
