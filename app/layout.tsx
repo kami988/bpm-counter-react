@@ -16,10 +16,40 @@ const geistMono = Geist_Mono({
 // https://www.npmjs.com/package/@cloudflare/next-on-pages
 export const runtime = "edge";
 
+const title = "BPM Calculator";
+const description =
+  "数直線で直感的にタップのタイミングを確認できるBPM（テンポ）カウンターです。音楽のテンポを測定したり、リズムを確認したりするのに役立ちます。";
+const imagePath = "images/ogp.png";
+
 export const metadata: Metadata = {
-  title: "BPM Calculator - タップでかんたんに測定できるBPM（テンポ）カウンター",
-  description:
-    "数直線で直感的にタップのタイミングを確認できるBPM（テンポ）カウンターです。音楽のテンポを測定したり、リズムを確認したりするのに役立ちます。",
+  metadataBase: new URL("https://bpmcalculator-numberline.com"),
+  title: title,
+  description: description,
+  openGraph: {
+    title: title,
+    description: description,
+    images: [
+      {
+        url: imagePath,
+        width: 1200,
+        height: 630,
+      },
+    ],
+    url: "https://bpmcalculator-numberline.com",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: title,
+    description: description,
+    images: [
+      {
+        url: imagePath,
+        width: 1200,
+        height: 630,
+      },
+    ],
+    site: "@kami_9808",
+  },
 };
 
 export default function RootLayout({
